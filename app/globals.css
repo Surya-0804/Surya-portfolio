@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .cursive {
-  font-family: "Cedarville Cursive", cursive;
+  font-family: 'Cedarville Cursive', cursive;
 }
 .Welcome-text {
   background: linear-gradient(
@@ -60,6 +60,28 @@
 }
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
+}
+
+/* Custom thin gradient scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px; /* Thin scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #9333ea); /* Purple to Cyan */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    #3b82f6,
+    #9333ea
+  ); /* Blue via Purple */
 }
 
 html {
