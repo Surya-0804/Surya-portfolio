@@ -1,4 +1,5 @@
 import Articles from '@/components/main/Articles';
+import ContactMe from '@/components/main/ContactMe';
 import Encryption from '@/components/main/Encryption';
 import Experience from '@/components/main/Experience';
 import Hero from '@/components/main/Hero';
@@ -16,6 +17,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Articles />
+        <ContactMe />
       </div>
     </main>
   );
