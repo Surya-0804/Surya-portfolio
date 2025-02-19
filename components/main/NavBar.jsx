@@ -34,10 +34,16 @@ const NavBar = () => {
             <a href="#projects" className="cursor-pointer">
               Projects
             </a>
+            <a href="#experience" className="cursor-pointer">
+              Experience
+            </a>
+            <a href="#articles" className="cursor-pointer">
+              Articles
+            </a>
           </div>
         </div>
 
-        <div className="flex flex-row gap-5">
+        <div className="hidden flex-row gap-5   md:flex">
           {Socials.map((social) => (
             <Image
               src={social.src}
