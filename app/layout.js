@@ -4,7 +4,7 @@ import StarsCanvas from '@/components/main/StarBackground';
 import NavBar from '@/components/main/NavBar';
 import Footer from '@/components/main/Footer';
 import { Toaster } from 'sonner';
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
         <NavBar />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
