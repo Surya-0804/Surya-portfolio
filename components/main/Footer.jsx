@@ -58,7 +58,7 @@ const footerData = [
 
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
+    <div className="w-full h-full bg-[#1A1A2E] text-gray-200 shadow-lg p-[15px]">
       <div className="w-full flex flex-col items-center justify-center m-auto">
         <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
           {footerData.map((section, index) => (
@@ -73,7 +73,7 @@ const Footer = () => {
                 <a
                   key={idx}
                   href={link.url}
-                  className="flex flex-row items-center my-[10px] cursor-pointer hover:text-gray-400 transition-colors duration-200"
+                  className="flex flex-row items-center my-[10px] cursor-pointer hover:text-gray-400 transition-colors duration-200 z-[20]"
                   target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
                   rel="noopener noreferrer"
                   aria-label={link.name}
