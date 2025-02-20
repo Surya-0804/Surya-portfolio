@@ -8,8 +8,54 @@ import { Toaster } from 'sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Surya Portfolio',
-  description: 'This is my portfolio',
+  title: 'Ram Sai Sri Surya | Full Stack Developer & AI Enthusiast',
+  description:
+    'I am a Full Stack Developer skilled in Next.js, React, Node.js, and AI/ML. Check out my portfolio showcasing innovative projects, blogs, and expertise in modern web technologies.',
+  keywords: [
+    'Surya Portfolio',
+    'Full Stack Developer',
+    'Next.js SEO',
+    'React.js Expert',
+    'Node.js Backend',
+    'AI in Web Development',
+    'Machine Learning Engineer',
+    'Cloud Developer',
+    'Frontend Developer',
+    'Backend Development',
+  ],
+  authors: [{ name: 'Ram Sai Sri Surya', url: 'https://your-portfolio.com' }],
+  openGraph: {
+    title: 'Ram Sai Sri Surya | Full Stack Developer & AI Enthusiast',
+    description:
+      'Full Stack Developer specializing in React, Next.js, and AI/ML. Explore my portfolio, blog, and projects in cutting-edge web development and cloud computing.',
+    url: 'https://your-portfolio.com',
+    type: 'website',
+    images: [
+      {
+        url: 'https://your-portfolio.com/assets/og-image.jpg', // Ensure this is a real hosted image
+        width: 1200,
+        height: 630,
+        alt: 'Ram Sai Sri Surya Portfolio - Full Stack Developer & AI Enthusiast',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@_Surya_21_',
+    creator: '@_Surya_21_',
+    title: 'Ram Sai Sri Surya | Full Stack Developer & AI Enthusiast',
+    description:
+      'Explore my portfolio featuring expertise in Full Stack Development, Next.js, AI, and Machine Learning.',
+    images: ['https://your-portfolio.com/assets/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  themeColor: '#0f172a', // Adds branding color to browser UI
+  alternates: {
+    canonical: 'https://your-portfolio.com',
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -4,7 +4,10 @@ export const experience = [
     content: (
       <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
         <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
-          Full-Stack Developer | CareAutomate
+          <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            Full-Stack Developer
+          </span>{' '}
+          | CareAutomate
         </h3>
         <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
           <li>
@@ -27,9 +30,12 @@ export const experience = [
   {
     title: 'Aug 2024 - Present',
     content: (
-      <div className="rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer p-4">
+      <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
         <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
-          Teaching Aid | StudyOwl & Vishnu Institute of Technology
+          <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            Teaching Aid
+          </span>{' '}
+          | StudyOwl & Vishnu Institute of Technology
         </h3>
         <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
           <li>
@@ -52,9 +58,13 @@ export const experience = [
   {
     title: 'Aug 2024 - Present',
     content: (
-      <div className="rounded-lg shadow-lg border border-[#2A0E61] cursor-pointer p-4">
+      <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
         <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
-          Community Manager & ML/DL Developer | Nexus Sparks
+          <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            {' '}
+            Community Manager & ML/DL Developer
+          </span>{' '}
+          | Nexus Sparks
         </h3>
         <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
           <li>
