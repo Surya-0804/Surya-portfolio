@@ -31,14 +31,14 @@ export const projects = [
     github: 'https://github.com/Surya-0804/commUnity',
     link: 'https://community-vert.vercel.app/',
   },
-  // {
-  //   src: '/projects/DSATracker.png',
-  //   title: 'DSA Tracker',
-  //   description:
-  //     'A comprehensive platform for managing and tracking your Data Structures and Algorithms (DSA) journey, offering an intuitive interface and structured progress monitoring.',
-  // github: '#',
-  // link: '#'
-  // },
+  {
+    src: '/projects/DSATracker.png',
+    title: 'DSA Tracker',
+    description:
+      'A comprehensive platform for managing and tracking your Data Structures and Algorithms (DSA) journey, offering an intuitive interface and structured progress monitoring.',
+    github: '#',
+    link: 'https://dsa-tracker-website.vercel.app/',
+  },
   {
     src: '/projects/HireAHand.png',
     title: 'Hire-A-Hand',
@@ -55,14 +55,14 @@ export const projects = [
     github: 'https://github.com/Surya-0804/AudioHunt-Expressjs',
     link: 'https://taskmate-gilt.vercel.app/',
   },
-  // {
-  //   src: '/projects/WeatherApp.png',
-  //   title: 'Weather App',
-  //   description:
-  //     'Developed a React Native app with OpenWeatherMap API for real-time weather updates and forecasts.',
-  // github: 'https://github.com/Surya-0804/Weather-App-reactnative',
-  // link: 'https://github.com/Surya-0804/Weather-App-reactnative'
-  // },
+  {
+    src: '/projects/WeatherApp.png',
+    title: 'Weather App',
+    description:
+      'Developed a React Native app with OpenWeatherMap API for real-time weather updates and forecasts.',
+    github: 'https://github.com/Surya-0804/Weather-App-reactnative',
+    link: 'https://github.com/Surya-0804/Weather-App-reactnative',
+  },
   {
     src: '/projects/TaskMate.png',
     title: 'TaskMate',
@@ -70,5 +70,13 @@ export const projects = [
       'A modern and sleek task management application built with Next.js, Hasura, and ShadCN components.',
     github: 'https://github.com/Surya-0804/TaskMate-Next.js-Hasura',
     link: 'https://taskmate-gilt.vercel.app/',
+  },
+  {
+    src: '/projects/VISMOH.png',
+    title: 'VISMOH',
+    description:
+      'AI-powered platform for  𝐚𝐭𝐡𝐥𝐞𝐭𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞 𝐭𝐫𝐚𝐜𝐤𝐢𝐧𝐠, 𝐝𝐢𝐞𝐭𝐚𝐫𝐲 𝐦𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭, 𝐚𝐧𝐝 𝐭𝐫𝐚𝐢𝐧𝐢𝐧𝐠 𝐫𝐞𝐜𝐨𝐦𝐦𝐞𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬 while also  𝐜𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐧𝐠 𝐚𝐭𝐡𝐥𝐞𝐭𝐞𝐬, 𝐜𝐨𝐚𝐜𝐡𝐞𝐬, 𝐚𝐧𝐝 𝐬𝐩𝐨𝐧𝐬𝐨𝐫𝐬 to create new opportunities and collaborations.',
+    github: 'https://github.com/orgs/init-to-winit/repositories',
+    link: 'https://github.com/orgs/init-to-winit/repositories',
   },
 ];

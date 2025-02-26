@@ -69,7 +69,7 @@ export const experience = [
         <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
           <li>
             Assisting team members and community members in learning and
-            mastering React.js through workshops, tutorials, and one-on-one
+            mastering ML & DL through workshops, tutorials, and one-on-one
             mentoring.
           </li>
           <li>

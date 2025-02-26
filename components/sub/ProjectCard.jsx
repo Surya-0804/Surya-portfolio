@@ -15,7 +15,7 @@ const ProjectCard = ({ src, title, description, github, link }) => {
         alt={title}
         width={1000}
         height={1000}
-        className="w-full object-contain"
+        className="w-full h-[290px] object-cover object-center"
       />
 
       {/* Project Details */}

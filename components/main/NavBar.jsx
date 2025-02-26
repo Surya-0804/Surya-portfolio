@@ -43,15 +43,23 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className="hidden flex-row gap-5   md:flex">
+        {/* Social Media Icons */}
+        <div className="hidden flex-row gap-5 md:flex">
           {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
+            <a
               key={social.name}
-              width={24}
-              height={24}
-            />
+              href={social.link} // Ensure this exists in your Socials array
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={social.src}
+                alt={social.name}
+                width={24}
+                height={24}
+                className="cursor-pointer hover:scale-110 transition-transform duration-200"
+              />
+            </a>
           ))}
         </div>
       </div>
