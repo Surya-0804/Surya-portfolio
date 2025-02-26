@@ -188,3 +188,12 @@ html {
 .cssbuttons-io-button:active {
   box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
 }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

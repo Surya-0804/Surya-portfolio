@@ -1,3 +1,4 @@
+import Achievements from '@/components/main/Achievements';
 import Articles from '@/components/main/Articles';
 import ContactMe from '@/components/main/ContactMe';
 import Encryption from '@/components/main/Encryption';
@@ -18,6 +19,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Articles />
+        <Achievements />
         <ContactMe />
       </div>
     </main>
