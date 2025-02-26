@@ -73,7 +73,7 @@ const ContactForm = () => {
             placeholder="Enter your Name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            class="bg-[#222630] px-4 py-3 outline-none w-full text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
+            className="bg-[#222630] px-4 py-3 outline-none w-full text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
           />
         </div>
 
@@ -92,7 +92,7 @@ const ContactForm = () => {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            class="bg-[#222630] px-4 py-3 outline-none w-full text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
+            className="bg-[#222630] px-4 py-3 outline-none w-full text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
           />
         </div>
 
@@ -110,11 +110,11 @@ const ContactForm = () => {
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
-            class="bg-[#222630] px-4 py-3 outline-none w-full text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
+            className="bg-[#222630] px-4 py-3 outline-none w-full text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
             rows="3"
           />
         </div>
-        <button class="cssbuttons-io-button" type="submit">
+        <button className="cssbuttons-io-button" type="submit">
           <span>Contact Me</span>
         </button>
       </form>
