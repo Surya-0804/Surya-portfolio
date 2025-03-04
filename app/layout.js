@@ -5,6 +5,8 @@ import NavBar from '@/components/main/NavBar';
 import Footer from '@/components/main/Footer';
 import { Toaster } from 'sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -71,6 +73,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
