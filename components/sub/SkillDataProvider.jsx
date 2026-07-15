@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-const SkillDataProvider = ({ src, width, height, index }) => {
+const SkillDataProvider = ({ src, name, width, height, index }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Ensures the animation triggers only once
-    threshold: 0.1, // Fires when 10% of the element is visible
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   const imageVariants = {
@@ -26,8 +26,16 @@ const SkillDataProvider = ({ src, width, height, index }) => {
       animate={inView ? "visible" : "hidden"}
       custom={index}
       transition={{ delay: index * animationDelay }}
+      className="flex flex-col items-center gap-2 group"
     >
-      <Image src={src} width={width} height={height} alt={`Skill ${index}`} />
+      <div className="transition-transform duration-300 group-hover:scale-110">
+        <Image src={src} width={width} height={height} alt={name || `Skill ${index}`} />
+      </div>
+      {name && (
+        <span className="text-gray-400 text-[11px] font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {name}
+        </span>
+      )}
     </motion.div>
   );
 };

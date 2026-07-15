@@ -1,27 +1,83 @@
 export const experience = [
   {
-    title: 'Dec 2024 - Present',
+    title: 'June 2025 - Present',
     content: (
       <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
-        <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
+        <h3 className="text-white text-lg md:text-xl font-semibold mb-1">
           <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            Full-Stack Developer
+            AI/LLM Engineer
+          </span>{' '}
+          | SproutsAI
+        </h3>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 border border-green-500/30 font-medium">
+            Full-time
+          </span>
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30 font-medium">
+            Intern → Converted Apr 2026
+          </span>
+          <span className="text-gray-500 text-[11px]">Remote, India</span>
+        </div>
+        <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
+          <li>
+            Deployed and benchmarked open-source LLMs — Phi-4, Qwen2.5-72B
+            (AWQ), Qwen3.5-35B MoE — on NVIDIA DGX Spark via vLLM + Docker;
+            finalized Qwen3.5-35B for production deployment.
+          </li>
+          <li>
+            Unified Match Parser architecture end-to-end, consolidating
+            fragmented scoring logic into a modular pipeline; design spec
+            approved by senior technical advisor.
+          </li>
+          <li>
+            Designed candidate filtering pipeline with{' '}
+            <span className="text-purple-400 font-semibold">8+ quality signals</span>{' '}
+            — reducing irrelevant profiles by{' '}
+            <span className="text-cyan-400 font-semibold">30%+</span> and
+            low-quality match reviews by{' '}
+            <span className="text-cyan-400 font-semibold">40%</span>.
+          </li>
+          <li>
+            Extended sourcing pipeline with multi-source web retrieval (Tavily,
+            Parallel AI, Exa AI, DuckDuckGo) and built GitHub enrichment
+            pipeline for evidence-backed candidate profiles.
+          </li>
+          <li>
+            Executed zero-downtime production migration from MongoDB to Qdrant
+            across{' '}
+            <span className="text-purple-400 font-semibold">5 NLP repositories</span>{' '}
+            (<span className="text-cyan-400 font-semibold">10K+ daily queries</span>);
+            deployed embedding service via FastAPI.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    title: 'Dec 2024 - May 2025',
+    content: (
+      <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
+        <h3 className="text-white text-lg md:text-xl font-semibold mb-1">
+          <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            Full-Stack Developer Intern
           </span>{' '}
           | CareAutomate
         </h3>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 font-medium">
+            Internship
+          </span>
+          <span className="text-gray-500 text-[11px]">Remote, India</span>
+        </div>
         <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
           <li>
-            Spearheading the development of scalable web applications,
-            integrating modern front-end frameworks with robust back-end
-            architectures.
+            Developed React.js frontend and Express.js backend with MongoDB;
+            built and productionized Speech-to-Text and document extraction
+            pipelines.
           </li>
           <li>
-            Collaborating with cross-functional teams to enhance automation
-            solutions and optimize software performance.
-          </li>
-          <li>
-            Implementing security best practices and CI/CD pipelines to
-            streamline deployment and maintain high application reliability.
+            Integrated AI models into backend services while optimizing for
+            real-world latency and production reliability.
           </li>
         </ul>
       </div>

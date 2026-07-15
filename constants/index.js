@@ -1,55 +1,25 @@
-export const Skill_data = [
+export const AI_ML_skills = [
   {
     skill_name: 'Python',
-    Image: '/Python.png',
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: 'Java',
-    Image: '/Java.png',
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: 'C',
-    Image: '/C.png',
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: 'PHP',
-    Image: '/php.png',
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: 'Git',
-    Image: '/git.png',
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: 'GitHub',
-    Image: '/github.png',
+    Image: '/skills/Python.png',
     width: 80,
     height: 80,
   },
   {
     skill_name: 'PyTorch',
-    Image: '/PyTorch.png',
+    Image: '/skills/PyTorch.png',
     width: 80,
     height: 80,
   },
   {
     skill_name: 'Deep Learning',
-    Image: '/deep-learning.png',
+    Image: '/skills/deep-learning.png',
     width: 80,
     height: 80,
   },
   {
     skill_name: 'NLP',
-    Image: '/nlp.png',
+    Image: '/skills/nlp.png',
     width: 80,
     height: 80,
   },
@@ -57,69 +27,63 @@ export const Skill_data = [
 
 export const Socials = [
   {
-    name: 'Instagram',
-    src: '/socials/instagram.svg',
-    link: 'https://www.instagram.com/surya_0804/',
-  },
-  {
-    name: 'Facebook',
+    name: 'LinkedIn',
     src: '/socials/linkedin144.png',
     link: 'https://www.linkedin.com/in/suryaabothula/',
   },
   {
-    name: 'Discord',
-    src: '/socials/discord.svg',
-    link: 'https://discord.gg/surya_0804',
+    name: 'GitHub',
+    src: '/gitwhite.png',
+    link: 'https://github.com/Surya-0804',
   },
 ];
 
 export const Frontend_skill = [
   {
     skill_name: 'Html 5',
-    Image: '/html.png',
+    Image: '/skills/html.png',
     width: 80,
     height: 80,
   },
   {
     skill_name: 'Css',
-    Image: '/css.png',
+    Image: '/skills/css.png',
     width: 80,
     height: 80,
   },
   {
-    skill_name: 'Java Script',
-    Image: '/js.png',
+    skill_name: 'JavaScript',
+    Image: '/skills/js.png',
     width: 65,
     height: 65,
   },
   {
-    skill_name: 'Tailwind Css',
-    Image: '/tailwind.png',
+    skill_name: 'TypeScript',
+    Image: '/skills/ts.png',
     width: 80,
     height: 80,
   },
   {
-    skill_name: 'Material UI',
-    Image: '/mui.png',
+    skill_name: 'Tailwind CSS',
+    Image: '/skills/tailwind.png',
     width: 80,
     height: 80,
   },
   {
     skill_name: 'React',
-    Image: '/react.png',
+    Image: '/skills/react.png',
     width: 80,
     height: 80,
   },
   {
     skill_name: 'Redux',
-    Image: '/redux.png',
+    Image: '/skills/redux.png',
     width: 80,
     height: 80,
   },
-
   {
-    skill_name: 'Next js 14',
-    Image: '/next.png',
+    skill_name: 'Next.js',
+    Image: '/skills/next.png',
     width: 80,
     height: 80,
   },
@@ -127,71 +91,66 @@ export const Frontend_skill = [
 
 export const Backend_skill = [
   {
-    skill_name: 'Node js',
-    Image: '/node-js.png',
+    skill_name: 'Node.js',
+    Image: '/skills/node-js.png',
     width: 80,
     height: 80,
   },
   {
-    skill_name: 'Express js',
-    Image: '/express.png',
+    skill_name: 'Express.js',
+    Image: '/skills/express.png',
     width: 80,
     height: 80,
   },
   {
-    skill_name: 'Fire base',
-    Image: '/Firebase.png',
-    width: 55,
-    height: 55,
+    skill_name: 'FastAPI',
+    Image: '/skills/Flask.png',
+    width: 70,
+    height: 70,
   },
   {
-    skill_name: 'My SQL',
-    Image: '/mysql.png',
+    skill_name: 'Docker',
+    Image: '/skills/docker.webp',
     width: 70,
     height: 70,
   },
   {
     skill_name: 'MongoDB',
-    Image: '/mongodb.png',
+    Image: '/skills/mongodb.png',
     width: 40,
     height: 40,
   },
-
   {
     skill_name: 'PostgreSQL',
-    Image: '/postger.png',
+    Image: '/skills/postger.png',
     width: 70,
     height: 70,
   },
-
   {
-    skill_name: 'Flask',
-    Image: '/Flask.png',
+    skill_name: 'MySQL',
+    Image: '/skills/mysql.png',
     width: 70,
     height: 70,
   },
 ];
 
-export const Full_stack = [
+export const Tools_skill = [
   {
-    skill_name: 'React Native',
-    Image: '/ReactNative .png',
-    width: 70,
-    height: 70,
+    skill_name: 'Git',
+    Image: '/skills/git.png',
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: 'GitHub',
+    Image: '/skills/github.png',
+    width: 80,
+    height: 80,
   },
   {
     skill_name: 'Figma',
-    Image: '/figma.png',
+    Image: '/skills/figma.png',
     width: 50,
     height: 50,
-  },
-];
-
-export const Other_skill = [
-  {
-    skill_name: 'PyTorch',
-    Image: '/PyTorch.png',
-    width: 80,
-    height: 80,
   },
 ];
