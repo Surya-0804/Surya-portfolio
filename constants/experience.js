@@ -112,7 +112,7 @@ export const experience = [
     ),
   },
   {
-    title: 'Aug 2024 - Present',
+    title: 'Aug 2024 - Aug 2025',
     content: (
       <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
         <h3 className="text-white text-lg md:text-xl font-semibold mb-2">

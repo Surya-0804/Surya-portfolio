@@ -9,7 +9,7 @@ import {
 import { SparklesIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { TypewriterEffect } from '../ui/typewriter-effect';
-import AIEngineerCircle from './AIEngineerCircle';
+import HeroImage from './HeroImage';
 
 const impactMetrics = [
   { value: '30%+', label: 'Fewer Irrelevant Profiles' },
@@ -29,10 +29,12 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-center px-6 md:px-20 mt-40 w-full z-[20]"
+      // FIX 1: Added `max-w-[1300px]` and `mx-auto` to stop infinite stretching
+      // FIX 2: Changed `justify-center` to `justify-between`
+      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 mt-40 w-full max-w-[1300px] mx-auto z-[20]"
       id="about-me"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="w-full lg:w-[60%] flex flex-col gap-5 justify-center text-start">
         {/* Badge */}
         <motion.div
           variants={slideInFromTop}
@@ -138,12 +140,13 @@ const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Right Side AI Circle */}
+      {/* Right Side Photo */}
+      {/* FIX 4: Replaced `w-full h-full` with `lg:w-[40%]` and pushed the image slightly to the right */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full justify-center items-center hidden lg:flex"
+        className="w-full lg:w-[40%] flex justify-center lg:justify-end items-center hidden lg:flex"
       >
-        <AIEngineerCircle />
+        <HeroImage />
       </motion.div>
     </motion.div>
   );
