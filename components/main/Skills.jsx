@@ -13,8 +13,8 @@ import { slideInFromLeft } from '@/utils/motion';
 
 const skillCategories = [
   { title: 'AI / ML & NLP', data: AI_ML_skills },
-  { title: 'Frontend', data: Frontend_skill },
   { title: 'Backend & Infrastructure', data: Backend_skill },
+  { title: 'Frontend (Supporting)', data: Frontend_skill },
   { title: 'Tools & Platforms', data: Tools_skill },
 ];
 

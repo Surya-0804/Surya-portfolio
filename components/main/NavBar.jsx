@@ -31,7 +31,7 @@ const NavBar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
           <span className="font-extrabold ml-[10px] hidden md:block text-white">
-            Surya Abothula
+            Ram Sai Sri Surya Abothula
           </span>
         </a>
 

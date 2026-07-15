@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
 
         <div className="mb-[20px] text-[15px] text-center mt-[20px]">
-          &copy; Surya Abothula 2025–2026. All rights reserved
+          &copy; Ram Sai Sri Surya Abothula 2025–2026. All rights reserved
         </div>
       </div>
     </div>

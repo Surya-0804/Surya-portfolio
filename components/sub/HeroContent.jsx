@@ -40,7 +40,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[15px]">
-            AI/LLM Engineer & Full Stack Developer
+            NLP & AI/LLM Engineer
           </h1>
         </motion.div>
 
@@ -51,7 +51,7 @@ const HeroContent = () => {
         >
           <span className="text-gray-400 text-lg">Hi, I&apos;m</span>
           <h1 className="text-5xl md:text-6xl font-bold text-white">
-            Surya Abothula
+            Ram Sai Sri Surya Abothula
           </h1>
         </motion.div>
 

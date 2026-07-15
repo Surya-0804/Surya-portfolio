@@ -14,10 +14,11 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: 'Surya Abothula | AI/LLM Engineer & Full Stack Developer',
+  title: 'Ram Sai Sri Surya Abothula | AI/LLM Engineer',
   description:
-    'AI/LLM Engineer with 1+ year building production-grade NLP and ML systems. Deploying open-source LLMs on NVIDIA DGX, designing RAG pipelines, and optimizing semantic search. Full Stack Developer skilled in Next.js, React, FastAPI, and Python.',
+    'AI/LLM Engineer specializing in building production-grade NLP and ML systems. Expert in LLM deployment on NVIDIA DGX, RAG pipelines, and semantic search. Experienced in backend & full-stack engineering.',
   keywords: [
+    'Ram Sai Sri Surya Abothula',
     'Surya Abothula',
     'AI Engineer',
     'LLM Engineer',
@@ -36,9 +37,9 @@ export const metadata = {
     'Vector Database',
     'Qdrant',
   ],
-  authors: [{ name: 'Surya Abothula', url: 'https://surya-portfolio-umber.vercel.app' }],
+  authors: [{ name: 'Ram Sai Sri Surya Abothula', url: 'https://surya-portfolio-umber.vercel.app' }],
   openGraph: {
-    title: 'Surya Abothula | AI/LLM Engineer & Full Stack Developer',
+    title: 'Ram Sai Sri Surya Abothula | AI/LLM Engineer',
     description:
       'AI/LLM Engineer building production AI systems — LLM deployment, RAG pipelines, and semantic search at scale. Explore my portfolio, projects, and technical writing.',
     url: 'https://surya-portfolio-umber.vercel.app',
@@ -48,7 +49,7 @@ export const metadata = {
         url: 'https://surya-portfolio-umber.vercel.app/logo/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Surya Abothula — AI/LLM Engineer Portfolio',
+        alt: 'Ram Sai Sri Surya Abothula — AI/LLM Engineer Portfolio',
       },
     ],
   },
@@ -56,9 +57,9 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@_Surya_21_',
     creator: '@_Surya_21_',
-    title: 'Surya Abothula | AI/LLM Engineer & Full Stack Developer',
+    title: 'Ram Sai Sri Surya Abothula | AI/LLM Engineer',
     description:
-      'Explore my portfolio — production LLM deployment, RAG pipelines, semantic search, and full-stack web applications.',
+      'Explore my portfolio — production LLM deployment, RAG pipelines, semantic search, and full-stack capabilities.',
     images: ['https://surya-portfolio-umber.vercel.app/logo/logo.png'],
   },
   robots: {
