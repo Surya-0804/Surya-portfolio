@@ -189,4 +189,151 @@ html {
   box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
 }
 
+/* ─── Skill Pills ────────────────────────────────────────────────────────── */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: default;
+  user-select: none;
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Domain variant — purple glow */
+.skill-pill-domain {
+  background: rgba(112, 66, 248, 0.1);
+  border: 1px solid rgba(112, 66, 248, 0.3);
+  color: #d4bfff;
+  box-shadow: 0 0 12px rgba(112, 66, 248, 0.15),
+    inset 0 0 12px rgba(112, 66, 248, 0.06);
+}
+
+.skill-pill-domain:hover {
+  border-color: rgba(180, 155, 255, 0.6);
+  box-shadow: 0 0 20px rgba(112, 66, 248, 0.3),
+    0 0 40px rgba(112, 66, 248, 0.1),
+    inset 0 0 12px rgba(112, 66, 248, 0.1);
+  color: #e8d5ff;
+}
+
+/* Model variant — cyan glow */
+.skill-pill-model {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #a5d8ff;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.12),
+    inset 0 0 12px rgba(56, 189, 248, 0.05);
+}
+
+.skill-pill-model:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25),
+    0 0 40px rgba(56, 189, 248, 0.08),
+    inset 0 0 12px rgba(56, 189, 248, 0.08);
+  color: #d0ebff;
+}
+
+/* ─── Capability Items ───────────────────────────────────────────────────── */
+.capability-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.capability-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(112, 66, 248, 0.2), rgba(56, 189, 248, 0.2));
+  border: 1px solid rgba(112, 66, 248, 0.35);
+  color: #b49bff;
+  box-shadow: 0 0 8px rgba(112, 66, 248, 0.15);
+}
+
+.capability-label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #c4c4d4;
+  letter-spacing: 0.01em;
+}
+
+.capability-item:hover .capability-check {
+  box-shadow: 0 0 14px rgba(112, 66, 248, 0.35);
+  border-color: rgba(180, 155, 255, 0.5);
+}
+
+.capability-item:hover .capability-label {
+  color: #e0e0f0;
+}
+
+/* ─── Section Divider ────────────────────────────────────────────────────── */
+.section-divider {
+  width: 100%;
+  max-width: 500px;
+  height: 1px;
+  margin: 20px auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(112, 66, 248, 0.3) 30%,
+    rgba(56, 189, 248, 0.3) 70%,
+    transparent 100%
+  );
+}
+
+/* ─── Bento Grid Cards ───────────────────────────────────────────────────── */
+.bento-card {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 5, 24, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 24px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.bento-card:hover {
+  border-color: rgba(112, 66, 248, 0.25);
+  box-shadow: 0 10px 40px rgba(112, 66, 248, 0.08),
+    0 0 20px rgba(112, 66, 248, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.bento-subheader {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a48fff;
+  opacity: 0.85;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  border-left: 2px solid #7042f8;
+  padding-left: 8px;
+}
+
+.bento-subheader:first-of-type {
+  margin-top: 0;
+}
 
