@@ -75,12 +75,12 @@ export const Backend_skill = [
     width: 70,
     height: 70,
   },
-  {
-    skill_name: 'PostgreSQL',
-    Image: '/skills/postger.png',
-    width: 70,
-    height: 70,
-  },
+  // {
+  //   skill_name: 'PostgreSQL',
+  //   Image: '/skills/postger.png',
+  //   width: 70,
+  //   height: 70,
+  // },
   {
     skill_name: 'MongoDB',
     Image: '/skills/mongodb.png',

@@ -84,34 +84,6 @@ export const experience = [
     ),
   },
   {
-    title: 'Aug 2024 - Present',
-    content: (
-      <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
-        <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
-          <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            Teaching Aid
-          </span>{' '}
-          | StudyOwl & Vishnu Institute of Technology
-        </h3>
-        <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
-          <li>
-            Assisting peers and juniors in mastering full-stack development,
-            focusing on technologies like React.js, Node.js, and Express.
-          </li>
-          <li>
-            Providing mentorship and guidance through coding exercises,
-            project-based learning, and hands-on labs to solidify understanding
-            of front-end and back-end concepts.
-          </li>
-          <li>
-            Organizing and conducting workshops and study sessions to help
-            students grasp full-stack development concepts and best practices.
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-  {
     title: 'Aug 2024 - Aug 2025',
     content: (
       <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
@@ -139,6 +111,34 @@ export const experience = [
           <li>
             Organizing ML and DL learning sessions and promoting a culture of
             continuous learning and skill development.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    title: 'Aug 2024 - Sep 2024',
+    content: (
+      <div className="rounded-lg shadow-lg border border-[#2A0E61] bg-[#1A1A2E] cursor-pointer p-4">
+        <h3 className="text-white text-lg md:text-xl font-semibold mb-2">
+          <span className="font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            Teaching Aid
+          </span>{' '}
+          | StudyOwl & Vishnu Institute of Technology
+        </h3>
+        <ul className="list-disc list-inside text-white text-xs md:text-sm font-normal space-y-2">
+          <li>
+            Assisting peers and juniors in mastering full-stack development,
+            focusing on technologies like React.js, Node.js, and Express.
+          </li>
+          <li>
+            Providing mentorship and guidance through coding exercises,
+            project-based learning, and hands-on labs to solidify understanding
+            of front-end and back-end concepts.
+          </li>
+          <li>
+            Organizing and conducting workshops and study sessions to help
+            students grasp full-stack development concepts and best practices.
           </li>
         </ul>
       </div>

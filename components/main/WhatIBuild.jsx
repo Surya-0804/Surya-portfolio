@@ -3,40 +3,41 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { slideInFromTop } from '@/utils/motion';
 import { useInView } from 'react-intersection-observer';
+import { Cpu, Workflow, Gauge, Binary, Bot, Layers } from 'lucide-react';
 
 const capabilities = [
   {
-    icon: '🧠',
+    icon: Cpu,
     title: 'LLM Deployment',
     description:
       'Deploy & benchmark open-source LLMs (Phi-4, Qwen2.5-72B, Qwen3.5-35B) on NVIDIA DGX via vLLM + Docker.',
   },
   {
-    icon: '🔍',
+    icon: Workflow,
     title: 'RAG Pipelines',
     description:
       'Design end-to-end retrieval-augmented generation with vector search, embeddings & prompt engineering.',
   },
   {
-    icon: '📊',
+    icon: Gauge,
     title: 'Model Evaluation',
     description:
       'Benchmark LLMs against production use cases — resume parsing, email generation — with quantization (AWQ).',
   },
   {
-    icon: '🔗',
+    icon: Binary,
     title: 'Semantic Search',
     description:
       'Vector DB migrations (MongoDB → Qdrant), embedding model evaluation & false positive reduction at scale.',
   },
   {
-    icon: '🕵️',
+    icon: Bot,
     title: 'Agentic Sourcing',
     description:
       'Multi-source web retrieval (Tavily, Exa AI, DuckDuckGo) & GitHub enrichment pipelines for candidate discovery.',
   },
   {
-    icon: '🌐',
+    icon: Layers,
     title: 'Full Stack Apps',
     description:
       'React, Next.js, FastAPI — building end-to-end web applications with modern frontend & scalable backends.',
@@ -105,7 +106,9 @@ const WhatIBuild = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative z-10">
-              <div className="text-3xl mb-4">{cap.icon}</div>
+              <div className="p-3 w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-500/10 to-cyan-500/10 border border-purple-500/20 text-purple-300 group-hover:text-cyan-400 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.15)] transition-all duration-300 flex items-center justify-center mb-4">
+                <cap.icon className="w-6 h-6 stroke-[1.75]" />
+              </div>
               <h3 className="text-white text-lg font-semibold mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-300">
                 {cap.title}
               </h3>
