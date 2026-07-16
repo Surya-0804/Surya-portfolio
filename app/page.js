@@ -10,7 +10,7 @@ import Skills from '@/components/main/Skills';
 
 export default function Home() {
   return (
-    <main className="h-full w-full">
+    <main className="h-full w-full relative z-30">
       <div className="flex flex-col gap-20">
         <Hero />
         <AboutMe />
