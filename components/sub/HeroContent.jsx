@@ -51,10 +51,10 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 min-h-screen w-full max-w-[1300px] mx-auto z-[20] pt-28 pb-10"
+      className="flex flex-col lg:flex-row items-center justify-center lg:gap-24 px-6 md:px-12 min-h-screen w-full max-w-[1300px] mx-auto z-[20] pt-28 pb-10"
       id="home"
     >
-      <div className="w-full lg:w-[60%] flex flex-col gap-5 justify-center text-start">
+      <div className="w-full lg:w-1/2 flex flex-col gap-5 justify-center text-start">
         {/* Badge */}
         <motion.div
           variants={slideInFromTop}
@@ -116,10 +116,9 @@ const HeroContent = () => {
       </div>
 
       {/* Right Side Photo */}
-      {/* FIX 4: Replaced `w-full h-full` with `lg:w-[40%]` and pushed the image slightly to the right */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full lg:w-[40%] flex justify-center lg:justify-end items-center hidden lg:flex"
+        className="w-full lg:w-1/2 flex justify-center items-center hidden lg:flex"
       >
         <HeroImage />
       </motion.div>
