@@ -20,7 +20,7 @@ const NavBar = () => {
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         {/* Logo */}
         <a
-          href="#about-me"
+          href="#home"
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image

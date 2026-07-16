@@ -7,7 +7,6 @@ import {
   slideInFromTop,
 } from '@/utils/motion';
 import { SparklesIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
 import HeroImage from './HeroImage';
 
 
@@ -18,14 +17,7 @@ const typewriterPhrases = [
   "NLP Specialist"
 ];
 
-const techPills = [
-  { label: 'Hugging Face', src: '/skills/huggingface.png' },
-  { label: 'Qdrant', src: '/skills/qdrant.png' },
-  { label: 'FastAPI', src: '/skills/fastapi.png' },
-  { label: 'PyTorch', src: '/skills/PyTorch.png' },
-  { label: 'LangChain', src: '/skills/langchain.png' },
-  { label: 'Docker', src: '/skills/docker.webp' },
-];
+
 
 const HeroContent = () => {
   const [phraseIdx, setPhraseIdx] = React.useState(0);
@@ -59,8 +51,8 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 mt-40 w-full max-w-[1300px] mx-auto z-[20]"
-      id="about-me"
+      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 min-h-screen w-full max-w-[1300px] mx-auto z-[20] pt-28 pb-10"
+      id="home"
     >
       <div className="w-full lg:w-[60%] flex flex-col gap-5 justify-center text-start">
         {/* Badge */}
@@ -70,7 +62,7 @@ const HeroContent = () => {
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[15px]">
-            Available for Full-Time Roles
+            Available for opportunities
           </h1>
         </motion.div>
 
@@ -96,40 +88,10 @@ const HeroContent = () => {
           <span className="inline-block w-[3px] h-8 bg-purple-500 ml-1 animate-[pulse_1s_infinite]" />
         </motion.div>
 
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          className="text-base md:text-lg text-gray-400 my-4 max-w-[580px] leading-relaxed"
-        >
-          Building and deploying <span className="text-white font-semibold">production-ready AI systems</span> across LLMs, retrieval-augmented generation, and <span className="text-purple-400 font-semibold">agentic workflows</span>. Specializing in scalable <span className="text-cyan-400 font-semibold">inference infrastructure</span>, semantic search, and <span className="text-purple-400 font-semibold">end-to-end ML pipelines</span>.
-        </motion.p>
-
-        {/* Glassmorphic Tech Stack Pills */}
-        <motion.div
-          variants={slideInFromLeft(0.85)}
-          className="flex flex-wrap gap-2.5 my-2 max-w-[600px]"
-        >
-          {techPills.map((pill, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-2 px-3 py-1 rounded-full border border-gray-600/40 bg-transparent backdrop-blur-sm text-[11px] font-medium text-gray-500 hover:border-purple-500/40 hover:text-gray-300 transition-all duration-300 cursor-default"
-            >
-              <Image
-                src={pill.src}
-                alt={pill.label}
-                width={16}
-                height={16}
-                className="object-contain"
-              />
-              <span>{pill.label}</span>
-            </div>
-          ))}
-        </motion.div>
-
-
         {/* CTA Buttons */}
         <motion.div
-          variants={slideInFromLeft(1)}
-          className="flex flex-row gap-4 mt-2"
+          variants={slideInFromLeft(0.8)}
+          className="flex flex-row gap-4 mt-10"
         >
           <a
             href="/Surya_Abothula_AI_Engineer_Resume.pdf"
@@ -160,6 +122,25 @@ const HeroContent = () => {
         className="w-full lg:w-[40%] flex justify-center lg:justify-end items-center hidden lg:flex"
       >
         <HeroImage />
+      </motion.div>
+
+      {/* Scroll Down Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-20"
+        onClick={() => document.getElementById('about-me')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <span className="text-gray-500 text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

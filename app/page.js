@@ -1,5 +1,6 @@
 import Achievements from '@/components/main/Achievements';
 import Articles from '@/components/main/Articles';
+import AboutMe from '@/components/main/AboutMe';
 import ContactMe from '@/components/main/ContactMe';
 import WhatIBuild from '@/components/main/WhatIBuild';
 import Experience from '@/components/main/Experience';
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="h-full w-full">
       <div className="flex flex-col gap-20">
         <Hero />
+        <AboutMe />
         <WhatIBuild />
         <Skills />
         <ImpactMetrics />
