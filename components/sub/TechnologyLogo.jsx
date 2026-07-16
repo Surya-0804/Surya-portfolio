@@ -25,7 +25,7 @@ const TechnologyLogo = ({ src, name, width, height, index, appliedIn }) => {
   return (
     <div
       ref={ref}
-      className={`relative flex flex-col items-center justify-center p-3 ${isHovered ? 'z-50' : 'z-10'}`}
+      className={`relative flex flex-col items-center justify-center p-2 ${isHovered ? 'z-50' : 'z-10'}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

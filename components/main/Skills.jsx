@@ -4,6 +4,7 @@ import {
   AI_Frameworks,
   Infrastructure_skills,
   Frontend_skill,
+  Workflow_skills,
   Models_worked_with,
   Capabilities,
 } from '@/constants';
@@ -22,10 +23,10 @@ const Skills = () => {
       <SkillText />
 
       {/* Bento Grid Container */}
-      <div className="w-full max-w-[1300px] mx-auto mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-30">
+      <div className="w-full max-w-[1300px] mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-30 items-start">
         
-        {/* CARD 1: Core Technologies (Logos) - Spans 2 columns on desktop */}
-        <div className="lg:col-span-2 bento-card flex flex-col justify-between">
+        {/* CARD 1: Core Technologies (Logos) - Spans 1 column on 50/50 desktop layout */}
+        <div className="lg:col-span-1 bento-card flex flex-col justify-between">
           <div>
             <h2 className="text-xl font-bold text-white mb-6 tracking-wide">
               Core Tech Stack &amp; Tools
@@ -34,7 +35,7 @@ const Skills = () => {
             {/* AI Frameworks */}
             <div>
               <div className="bento-subheader">AI Frameworks</div>
-              <div className="flex flex-row justify-start flex-wrap gap-4 items-center mb-6">
+              <div className="flex flex-row justify-start flex-wrap gap-3 md:gap-4 items-center mb-4">
                 {AI_Frameworks.map((image, index) => (
                   <TechnologyLogo
                     key={image.skill_name}
@@ -52,7 +53,7 @@ const Skills = () => {
             {/* Infrastructure */}
             <div>
               <div className="bento-subheader">Infrastructure &amp; Search</div>
-              <div className="flex flex-row justify-start flex-wrap gap-4 items-center mb-6">
+              <div className="flex flex-row justify-start flex-wrap gap-3 md:gap-4 items-center mb-4">
                 {Infrastructure_skills.map((image, index) => (
                   <TechnologyLogo
                     key={image.skill_name}
@@ -68,10 +69,28 @@ const Skills = () => {
             </div>
 
             {/* Frontend */}
-            <div>
+            <div className="mb-4">
               <div className="bento-subheader">Frontend Supporting</div>
-              <div className="flex flex-row justify-start flex-wrap gap-4 items-center">
+              <div className="flex flex-row justify-start flex-wrap gap-3 md:gap-4 items-center">
                 {Frontend_skill.map((image, index) => (
+                  <TechnologyLogo
+                    key={image.skill_name}
+                    src={image.Image}
+                    name={image.skill_name}
+                    width={image.width}
+                    height={image.height}
+                    appliedIn={image.appliedIn}
+                    index={index}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Workflow & Dev Tools */}
+            <div>
+              <div className="bento-subheader">Workflow &amp; Dev Tools</div>
+              <div className="flex flex-row justify-start flex-wrap gap-3 md:gap-4 items-center">
+                {Workflow_skills.map((image, index) => (
                   <TechnologyLogo
                     key={image.skill_name}
                     src={image.Image}
@@ -86,7 +105,7 @@ const Skills = () => {
             </div>
           </div>
           
-          <div className="text-[11px] text-gray-500 italic mt-6 border-t border-white/5 pt-3">
+          <div className="text-[11px] text-gray-500 italic mt-4 border-t border-white/5 pt-3">
             💡 Hover over any technology to see how it was applied in projects.
           </div>
         </div>
@@ -95,7 +114,7 @@ const Skills = () => {
         <div className="flex flex-col gap-6 lg:col-span-1">
           
           {/* CARD 2: AI Domains */}
-          <div className="bento-card flex-1">
+          <div className="bento-card">
             <h2 className="text-lg font-bold text-white mb-4 tracking-wide">
               AI &amp; Engineering Domains
             </h2>
@@ -129,8 +148,8 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* CARD 4: Capabilities - Full width row spanning all 3 columns */}
-        <div className="lg:col-span-3 bento-card">
+        {/* CARD 4: Capabilities - Full width row spanning all columns */}
+        <div className="lg:col-span-2 bento-card">
           <h2 className="text-xl font-bold text-white mb-4 tracking-wide text-center lg:text-left">
             Applied Capabilities &amp; Engineering Solutions
           </h2>

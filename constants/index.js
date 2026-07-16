@@ -1,7 +1,9 @@
-/*
-index.js - this is the skills page constants file. All the content is
-here - which will be displayed on the skills page.
-*/
+/**
+ * @file index.js (constants)
+ * @description Centralized constants configuration file for the Skills section of the portfolio.
+ * Structuring AI domains, framework logo arrays with project descriptions, infrastructure tools,
+ * frontend/workflow logos, models worked with, and applied engineering capabilities.
+ */
 
 // ─── Level 1: AI & Engineering Domains ────────────────────────────────────────
 export const AI_Domains = [
