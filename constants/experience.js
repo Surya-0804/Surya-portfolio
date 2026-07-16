@@ -46,7 +46,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">LLM Deployment &amp; Core Architecture</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Deployed and benchmarked open-source LLMs (Phi-4, Qwen2.5-72B, Qwen3.5-35B MoE) on NVIDIA DGX Spark via vLLM + Docker.</li>
               <li>Unified the Match Parser architecture end-to-end into a modular pipeline, with design spec approved by SproutsAI&apos;s senior technical advisor.</li>
             </ul>
@@ -60,7 +60,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Search Quality &amp; AI Pipelines</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Designed candidate filtering pipeline with 8+ quality signals, reducing irrelevant profiles by <span className="text-cyan-400 font-semibold">30%+</span> and low-quality match reviews by <span className="text-cyan-400 font-semibold">40%</span>.</li>
               <li>Executed zero-downtime production vector search migration from MongoDB to Qdrant across 5 NLP repositories (10K+ daily queries).</li>
             </ul>
@@ -74,7 +74,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Agentic Sourcing &amp; Profile Enrichment</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Extended candidate sourcing with multi-source web retrieval (Tavily, Parallel AI, Exa AI, DuckDuckGo).</li>
               <li>Built a GitHub enrichment pipeline resolving candidate profiles and extracting evidence-backed project history.</li>
             </ul>
@@ -126,7 +126,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Pipeline Development</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Developed React.js frontend and Express.js backend with MongoDB storage.</li>
               <li>Built and productionized Speech-to-Text and document extraction pipelines.</li>
             </ul>
@@ -140,7 +140,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Production Reliability</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Integrated AI models into backend services while optimizing for latency and production stability.</li>
             </ul>
           </div>
@@ -187,7 +187,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Technical Mentorship</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Assisted community members in mastering ML &amp; DL through workshops, tutorials, and one-on-one mentoring.</li>
               <li>Provided constructive feedback on ML and DL projects and helped troubleshoot code issues.</li>
             </ul>
@@ -201,7 +201,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Community Engagement</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Engaging with the community to provide technical support, answer questions, and foster a positive learning environment.</li>
               <li>Organizing ML and DL learning sessions and promoting a culture of continuous skill development.</li>
             </ul>
@@ -249,7 +249,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Peer Mentorship</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Assisting peers and juniors in mastering full-stack development (React.js, Node.js, and Express).</li>
               <li>Providing mentorship and guidance through coding exercises, project-based learning, and hands-on labs.</li>
             </ul>
@@ -263,7 +263,7 @@ export const experience = [
               </div>
               <h4 className="text-white text-sm md:text-base font-semibold">Technical Workshops</h4>
             </div>
-            <ul className="list-disc list-outside pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
+            <ul className="list-disc list-outside pl-6 md:pl-12 text-gray-400 text-xs md:text-sm leading-relaxed space-y-1.5">
               <li>Organizing and conducting workshops and study sessions to help students grasp full-stack development.</li>
             </ul>
           </div>
