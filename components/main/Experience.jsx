@@ -3,6 +3,7 @@ import React from 'react';
 import { Timeline } from '../ui/timeline';
 import { experience } from '@/constants/experience';
 
+// Client component wrapper for the optimized single-column visual timeline with aligned nodes and high contrast tags
 const Experience = () => {
   return (
     <div

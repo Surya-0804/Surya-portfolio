@@ -68,16 +68,16 @@ const ImpactMetrics = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="flex flex-col items-center text-center p-6 rounded-xl border border-[#2A0E61]/50 bg-[#0f0f23]/40 backdrop-blur-sm hover:border-purple-500/30 transition-colors duration-300"
+              className="flex flex-col items-center text-center p-6 rounded-xl border border-white/5 bg-[#0c0c1e]/50 backdrop-blur-md shadow-md hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(112,66,248,0.08)] hover:-translate-y-1 transition-all duration-300"
             >
-              <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3">
+              <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-3">
                 <AnimatedCounter
                   target={metric.target}
                   suffix={metric.suffix}
                   inView={inView}
                 />
               </span>
-              <span className="text-gray-400 text-sm md:text-base">
+              <span className="text-slate-400 text-sm md:text-base font-normal">
                 {metric.label}
               </span>
             </motion.div>
