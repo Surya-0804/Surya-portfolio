@@ -176,11 +176,75 @@ const LossFunctionVisual = () => {
           alt="Loss Function Visual"
         />
       </div>
-      <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-3 group-hover:text-purple-400 transition-colors duration-500 font-semibold">
+      <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-3 group-hover:text-purple-400 transition-colors duration-500 font-semibold font-mono">
         Optimization Landscape Log #03
       </span>
     </div>
   );
+};
+
+// Dynamic visual component mapping
+const StickyVisual = ({ activeArticle }) => {
+  if (!activeArticle) return null;
+
+  switch (activeArticle.visualType) {
+    case 'network':
+      return <NeuralNetworkVisual />;
+    case 'regression':
+      return <RegressionVisual />;
+    case 'loss':
+      return <LossFunctionVisual />;
+    case 'image':
+      return (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-black/40 rounded-xl border border-white/5 p-4 overflow-hidden group">
+          <div className="relative w-full h-36 rounded-lg overflow-hidden border border-white/10 bg-[#070715] flex items-center justify-center">
+            <Image
+              src={activeArticle.imageSrc || "/articles/DLSeries3.png"}
+              width={220}
+              height={140}
+              className="h-auto w-[90%] object-contain rounded transition-transform duration-500 group-hover:scale-105"
+              alt={activeArticle.title}
+            />
+          </div>
+          <span className="text-[10px] text-gray-500 uppercase tracking-widest mt-3 group-hover:text-purple-400 transition-colors duration-500 font-semibold font-mono text-center px-2 line-clamp-1">
+            {activeArticle.title}
+          </span>
+        </div>
+      );
+    default:
+      // High-end generic cosmic code card fallback
+      return (
+        <div className="w-full h-full flex flex-col items-between justify-between bg-[#030014]/60 rounded-xl border border-white/5 p-5 overflow-hidden group relative">
+          <div className="absolute -inset-10 bg-gradient-to-tr from-purple-500/10 via-cyan-500/5 to-transparent rounded-xl opacity-40 blur-lg group-hover:opacity-70 transition-opacity duration-700" />
+          
+          <div className="relative z-10 w-full flex justify-between items-center pb-2 border-b border-white/5">
+            <span className="text-[10px] font-mono text-purple-400/80 font-bold uppercase tracking-wider">
+              LOG // {activeArticle.id}
+            </span>
+            <span className="text-[9px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-400 font-medium">
+              {activeArticle.readTime}
+            </span>
+          </div>
+
+          <div className="relative z-10 flex flex-col items-center text-center py-4 my-auto">
+            <div className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-cyan-400 mb-3 group-hover:scale-110 group-hover:border-cyan-500/30 transition-all duration-300">
+              <BookOpen className="w-5 h-5" />
+            </div>
+            <h5 className="text-white text-xs md:text-sm font-bold line-clamp-2 leading-relaxed">
+              {activeArticle.title}
+            </h5>
+          </div>
+
+          <div className="relative z-10 w-full flex flex-wrap gap-1.5 justify-center pt-2 border-t border-white/5">
+            {activeArticle.tags.slice(0, 2).map((tag) => (
+              <span key={tag} className="text-[9px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-semibold uppercase tracking-wider">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+  }
 };
 
 // Row wrapper with in-view detection
@@ -203,7 +267,7 @@ const ArticleRow = ({ article, index, setActiveIndex }) => {
     >
       {/* Title ID & Header */}
       <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-3 text-xs font-semibold tracking-wider uppercase text-purple-400">
+        <div className="flex items-center gap-3 text-xs font-semibold tracking-wider uppercase text-purple-400 font-mono">
           <BookOpen className="w-3.5 h-3.5" />
           <span>LOG #{article.id} • {article.date}</span>
         </div>
@@ -219,10 +283,10 @@ const ArticleRow = ({ article, index, setActiveIndex }) => {
 
       {/* Meta tags */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium">
+        <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium font-mono">
           ⏱ {article.readTime}
         </span>
-        <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium flex items-center gap-1.5">
+        <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium flex items-center gap-1.5 font-mono">
           <span className={`w-1.5 h-1.5 rounded-full ${article.difficultyColor === 'emerald' ? 'bg-emerald-500' : 'bg-amber-500'}`} />
           {article.difficulty}
         </span>
@@ -243,9 +307,7 @@ const ArticleRow = ({ article, index, setActiveIndex }) => {
 
       {/* Mobile Inline Graphic */}
       <div className="block lg:hidden my-3 w-full max-w-sm mx-auto">
-        {article.visualType === 'network' && <NeuralNetworkVisual />}
-        {article.visualType === 'regression' && <RegressionVisual />}
-        {article.visualType === 'loss' && <LossFunctionVisual />}
+        <StickyVisual activeArticle={article} />
       </div>
 
       {/* Tech Used & CTA */}
@@ -255,7 +317,7 @@ const ArticleRow = ({ article, index, setActiveIndex }) => {
           {article.uses.map((tech) => (
             <span
               key={tech}
-              className="text-[10px] px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-slate-400 font-semibold"
+              className="text-[10px] px-2 py-0.5 rounded bg-white/[0.03] border border-white/5 text-slate-400 font-semibold font-mono"
             >
               {tech}
             </span>
@@ -293,17 +355,17 @@ const Articles = () => {
 
       {/* Series Progress Bar */}
       <div className="w-full max-w-lg mx-auto mb-12 p-4 rounded-xl border border-white/10 bg-[#0c0c1e]/40 backdrop-blur-md flex flex-col items-center gap-2.5 px-6">
-        <div className="flex justify-between w-full text-[10px] md:text-xs font-semibold tracking-wider text-slate-400 uppercase">
-          <span>Deep Learning Series</span>
-          <span className="text-cyan-400">3 of 10 Logs Published</span>
+        <div className="flex justify-between w-full text-[10px] md:text-xs font-semibold tracking-wider text-slate-400 uppercase font-mono">
+          <span>Technical Journal</span>
+          <span className="text-cyan-400">
+            {articles.length} Logs • {articles.reduce((acc, art) => acc + (parseInt(art.readTime) || 0), 0)} Mins Read
+          </span>
         </div>
-        <div className="w-full h-1.5 bg-neutral-800/80 rounded-full overflow-hidden border border-white/5">
-          <div className="h-full bg-gradient-to-r from-purple-500 via-cyan-400 to-emerald-500 rounded-full w-[30%]" />
-        </div>
+        <div className="w-full h-[2px] bg-gradient-to-r from-purple-500 via-cyan-400 to-emerald-500 rounded-full" />
       </div>
 
       {/* Two Column Layout container */}
-      <div className="flex flex-col lg:flex-row gap-12 w-full max-w-5xl mx-auto px-4 md:px-8 mt-4">
+      <div className="flex flex-col lg:flex-row gap-12 w-full max-w-6xl mx-auto px-4 md:px-8 mt-4">
         {/* Left Column: Natural page-scroll list */}
         <div className="flex-1 flex flex-col">
           {articles.map((article, index) => (
@@ -319,36 +381,19 @@ const Articles = () => {
         {/* Right Column: Sticky Graphics display container */}
         <div className="hidden lg:flex w-[350px] h-[320px] sticky top-[28vh] self-start rounded-2xl border border-white/10 bg-[#0c0c1e]/65 backdrop-blur-md overflow-hidden p-5 flex-shrink-0">
           <div className="relative w-full h-full">
-            <div
-              className="absolute inset-0 transition-all duration-500 ease-in-out"
-              style={{
-                opacity: activeIndex === 0 ? 1 : 0,
-                transform: activeIndex === 0 ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(10px)',
-                pointerEvents: activeIndex === 0 ? 'auto' : 'none'
-              }}
-            >
-              <NeuralNetworkVisual />
-            </div>
-            <div
-              className="absolute inset-0 transition-all duration-500 ease-in-out"
-              style={{
-                opacity: activeIndex === 1 ? 1 : 0,
-                transform: activeIndex === 1 ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(10px)',
-                pointerEvents: activeIndex === 1 ? 'auto' : 'none'
-              }}
-            >
-              <RegressionVisual />
-            </div>
-            <div
-              className="absolute inset-0 transition-all duration-500 ease-in-out"
-              style={{
-                opacity: activeIndex === 2 ? 1 : 0,
-                transform: activeIndex === 2 ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(10px)',
-                pointerEvents: activeIndex === 2 ? 'auto' : 'none'
-              }}
-            >
-              <LossFunctionVisual />
-            </div>
+            {articles.map((article, index) => (
+              <div
+                key={article.id}
+                className="absolute inset-0 transition-all duration-500 ease-in-out"
+                style={{
+                  opacity: activeIndex === index ? 1 : 0,
+                  transform: activeIndex === index ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(10px)',
+                  pointerEvents: activeIndex === index ? 'auto' : 'none'
+                }}
+              >
+                <StickyVisual activeArticle={article} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
