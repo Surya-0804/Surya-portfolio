@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, ArrowRight, BookOpen } from 'lucide-react';
+import { Calendar, ArrowRight, BookOpen, Clock } from 'lucide-react';
 import { articles } from '@/constants/articles';
 
 // Custom Visual Components
@@ -283,8 +283,9 @@ const ArticleRow = ({ article, index, setActiveIndex }) => {
 
       {/* Meta tags */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium font-mono">
-          ⏱ {article.readTime}
+        <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium font-mono flex items-center gap-1.5">
+          <Clock className="w-3.5 h-3.5 text-purple-400" />
+          <span>{article.readTime}</span>
         </span>
         <span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 text-slate-300 font-medium flex items-center gap-1.5 font-mono">
           <span className={`w-1.5 h-1.5 rounded-full ${article.difficultyColor === 'emerald' ? 'bg-emerald-500' : 'bg-amber-500'}`} />
