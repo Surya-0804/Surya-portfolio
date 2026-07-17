@@ -1,54 +1,33 @@
 const achievements = [
   {
-    quote: 'AI/LLM Engineer at SproutsAI',
-    description:
-      'Building production-grade LLM deployment, RAG pipelines, and semantic search systems on NVIDIA DGX infrastructure.',
+    id: "star-performer",
+    type: "primary",
+    title: "🏆 Star Performer Award (Employee of the Month)",
+    organization: "SproutsAI",
+    date: "July 2025",
+    description: "Recognized for exceptional initiative and driving major engineering milestones within the first month of joining the team. Awarded for consistently exceeding performance targets and taking on responsibilities beyond the standard job description.",
+    bullets: [
+      "Executed Vector Search migration from MongoDB to Qdrant, including full testing and deployment.",
+      "Implemented the core Ranking Algorithm and integrated Custom/Smart Labels for auto-sourcing improvements.",
+      "Drove geo-code cost mitigation efforts and aligned Resume Parse formatting with backend architecture."
+    ]
   },
   {
-    quote: 'GDG HackATron 2025 — 4th Place',
-    description:
-      'Placed 4th among 100+ teams for VISMOH — an AI-integrated sports management platform with NLP-powered dietary analysis.',
+    id: "gdg-hackatron",
+    type: "secondary",
+    title: "4th Place — GDG HackATron 2025",
+    organization: "Google Developer Groups",
+    date: "2025",
+    description: "Placed 4th among 100+ teams for VISMOH — an AI-integrated sports management platform featuring NLP-powered dietary analysis.",
   },
   {
-    quote: 'DeMux Hackathon — Special Appreciation',
-    description:
-      'Recognized for an NLP and AI-based EdTech solution for personalized learning.',
-  },
-  {
-    quote: 'Smart India Hackathon Finalist',
-    description:
-      'Qualified at college level for both 2023 and 2024 editions, showcasing innovative AI-driven solutions.',
-  },
-  {
-    quote: 'Deep Learning with PyTorch — IBM/edX',
-    description:
-      'Certified in deep learning fundamentals, neural network architectures, and PyTorch framework.',
-  },
-  {
-    quote: 'Programming with Generative AI — NPTEL',
-    description:
-      'Certified in generative AI concepts, prompt engineering, and LLM application development.',
-  },
-  {
-    quote: 'AWS Cloud Practitioner',
-    description:
-      'Certified in cloud computing fundamentals, AWS services, and cloud architecture best practices.',
-  },
-  {
-    quote: 'DSA Expertise — 650+ Problems Solved',
-    description:
-      'Solved 650+ problems across GeeksforGeeks and LeetCode, building strong algorithmic foundations.',
-  },
-  {
-    quote: 'Git & GitHub Workshop Facilitator',
-    description:
-      'Conducted a Git and GitHub workshop for 2nd-year CSE students at VIT Bhimavaram, earning faculty appreciation.',
-  },
-  {
-    quote: 'E-Summit Bombay 2025 Attendee',
-    description:
-      'Participated in E-Summit Bombay 2025, gaining insights into entrepreneurship and tech innovation.',
-  },
+    id: "demux-hackathon",
+    type: "secondary",
+    title: "Special Appreciation — DeMux Hackathon",
+    organization: "DeMux",
+    date: "2024",
+    description: "Recognized for architecting an NLP and AI-based EdTech solution designed for personalized learning pathways.",
+  }
 ];
 
 export default achievements;
