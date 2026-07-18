@@ -3,6 +3,7 @@ import './globals.css';
 import StarsCanvas from '@/components/main/StarBackground';
 import NavBar from '@/components/main/NavBar';
 import Footer from '@/components/main/Footer';
+import LoadingScreen from '@/components/main/LoadingScreen';
 import { Toaster } from 'sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -77,6 +78,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
+        <LoadingScreen />
         <Toaster richColors />
 
         <StarsCanvas />

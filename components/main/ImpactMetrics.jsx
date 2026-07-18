@@ -4,10 +4,30 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const metrics = [
-  { target: 30, suffix: '%+', label: 'Fewer Irrelevant Profiles' },
-  { target: 10, suffix: 'K+', label: 'Daily Queries Migrated' },
-  { target: 40, suffix: '%', label: 'Fewer False Positives' },
-  { target: 5, suffix: '+', label: 'NLP Repos Shipped' },
+  {
+    target: 30,
+    suffix: '%+',
+    label: 'Fewer Irrelevant Profiles',
+    description: 'Developed candidate parsing logic to screen out unqualified resumes automatically.',
+  },
+  {
+    target: 10,
+    suffix: 'K+',
+    label: 'Daily Queries Migrated',
+    description: 'Architected and migrated search indexing from MongoDB to Qdrant vector database.',
+  },
+  {
+    target: 40,
+    suffix: '%',
+    label: 'Fewer False Positives',
+    description: 'Evaluated embedding models and tuned retrieval thresholds to increase RAG precision.',
+  },
+  {
+    target: 5,
+    suffix: '',
+    label: 'NLP Repos Migrated',
+    description: 'Successfully migrated 5 NLP repositories to Qdrant vector database with zero downtime.',
+  },
 ];
 
 const AnimatedCounter = ({ target, suffix, duration = 2000, inView }) => {
@@ -45,13 +65,13 @@ const ImpactMetrics = () => {
   });
 
   return (
-    <div ref={ref} className="w-full py-16 px-6 md:px-20">
+    <div ref={ref} className="w-full py-16 px-4 md:px-12 lg:px-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto"
+        className="max-w-[1300px] mx-auto"
       >
         <h2 className="text-center text-[32px] md:text-[40px] font-semibold text-gray-200 mb-12">
           Impact{' '}
@@ -68,18 +88,26 @@ const ImpactMetrics = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
-              className="flex flex-col items-center text-center p-6 rounded-xl border border-white/5 bg-[#0c0c1e]/50 backdrop-blur-md shadow-md hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(112,66,248,0.08)] hover:-translate-y-1 transition-all duration-300"
+              className="group relative flex flex-col items-center justify-center text-center p-6 h-[200px] rounded-xl border border-white/5 bg-[#0c0c1e]/50 backdrop-blur-md shadow-md hover:border-purple-500/30 hover:shadow-[0_0_30px_rgba(112,66,248,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-default"
             >
-              <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-3">
-                <AnimatedCounter
-                  target={metric.target}
-                  suffix={metric.suffix}
-                  inView={inView}
-                />
-              </span>
-              <span className="text-slate-400 text-sm md:text-base font-normal">
-                {metric.label}
-              </span>
+              {/* Main Content (Counter & Label) */}
+              <div className="flex flex-col items-center justify-center transition-all duration-300 transform group-hover:-translate-y-5">
+                <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-3">
+                  <AnimatedCounter
+                    target={metric.target}
+                    suffix={metric.suffix}
+                    inView={inView}
+                  />
+                </span>
+                <span className="text-slate-400 text-sm md:text-base font-normal transition-all duration-300 group-hover:text-purple-300 px-2">
+                  {metric.label}
+                </span>
+              </div>
+
+              {/* Hover Explanation overlay */}
+              <div className="absolute bottom-5 left-4 right-4 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 text-slate-400 text-xs md:text-sm font-light leading-relaxed">
+                {metric.description}
+              </div>
             </motion.div>
           ))}
         </div>

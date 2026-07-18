@@ -6,10 +6,10 @@ import achievements from '@/constants/achievements';
 const Achievements = () => {
   return (
     <div
-      className="flex flex-col items-center justify-center py-24 relative w-full"
+      className="flex flex-col items-center justify-center py-16 relative w-full"
       id="achievements"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 pt-16 pb-12">
+      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-12">
         Achievements
       </h1>
 
