@@ -106,7 +106,7 @@ export default function ChatWidget() {
             <div className="flex items-center justify-between px-4 py-3 border-b border-purple-500/20 bg-purple-500/10">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="font-semibold text-slate-200 text-sm">Surya's AI Assistant</span>
+                <span className="font-semibold text-slate-200 text-sm">Surya&apos;s AI Assistant</span>
               </div>
               <div className="flex items-center gap-3">
                 <button
