@@ -21,6 +21,7 @@ export const TypewriterEffect = ({ words, className, cursorClassName }) => {
         { duration: 0.3, delay: stagger(0.1), ease: 'easeInOut' }
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   const renderWords = () => (

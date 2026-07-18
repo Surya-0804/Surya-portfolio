@@ -132,7 +132,7 @@ export default function ChatWidget() {
                 <div className="flex flex-col items-center justify-center h-full text-slate-400 space-y-3">
                   <Bot size={40} className="text-purple-400/50" />
                   <p className="text-sm text-center px-4">
-                    Hi! I'm Surya's AI assistant. Ask me anything about his experience, projects, or how to contact him.
+                    Hi! I&apos;m Surya&apos;s AI assistant. Ask me anything about his experience, projects, or how to contact him.
                   </p>
                 </div>
               )}
