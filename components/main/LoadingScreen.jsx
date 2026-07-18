@@ -4,10 +4,31 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, Cpu, Database } from 'lucide-react';
 
 const steps = [
-  { id: 0, text: "Initializing LLM Context...", icon: Cpu },
-  { id: 1, text: "Loading Vector Embeddings...", icon: Database },
-  { id: 2, text: "Waking up UI...", icon: Bot }
+  { id: 0, text: "Checking GPU Compute...", icon: Cpu },
+  { id: 1, text: "Loading vLLM & Qdrant...", icon: Database },
+  { id: 2, text: "Starting AI Interface...", icon: Bot }
 ];
+
+// Helper Typewriter component for active step terminal printing
+const TypewriterText = ({ text }) => {
+  const [displayText, setDisplayText] = useState('');
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        setDisplayText((prev) => prev + text.charAt(index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 15); // Fast typing speed
+
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return <span>{displayText}</span>;
+};
 
 export default function LoadingScreen() {
   const [activeStep, setActiveStep] = useState(0);
@@ -16,28 +37,41 @@ export default function LoadingScreen() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // 1. Scroll lock on mount
+    const isDev = process.env.NODE_ENV === 'development';
+    if (sessionStorage.getItem('hasBooted') && !isDev) {
+      setIsVisible(false);
+      return; 
+    }
+    
+    if (!isDev) {
+      sessionStorage.setItem('hasBooted', 'true');
+    }
     document.body.style.overflow = 'hidden';
 
-    // 2. Animate step state & progress percentage
-    // Total animation: 1500ms
     let startTimestamp = null;
     const duration = 1500;
+    let lastProgress = 0;
     
     const animateProgress = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const elapsed = timestamp - startTimestamp;
-      const currentProgress = Math.min((elapsed / duration) * 100, 100);
-      setProgress(Math.floor(currentProgress));
       
-      // Update steps based on timing
-      if (elapsed >= 500 && elapsed < 1000) {
+      const progressRatio = Math.min(elapsed / duration, 1);
+      const easeOutRatio = 1 - Math.pow(1 - progressRatio, 3);
+      const currentProgress = Math.floor(easeOutRatio * 100);
+      
+      if (currentProgress !== lastProgress) {
+        setProgress(currentProgress);
+        lastProgress = currentProgress;
+      }
+      
+      if (elapsed >= 400 && elapsed < 900) {
         setActiveStep(1);
         setCompleted(prev => prev.includes(0) ? prev : [...prev, 0]);
-      } else if (elapsed >= 1000 && elapsed < 1500) {
+      } else if (elapsed >= 900 && elapsed < 1300) {
         setActiveStep(2);
         setCompleted(prev => prev.includes(1) ? prev : [...prev, 0, 1]);
-      } else if (elapsed >= 1500) {
+      } else if (elapsed >= 1300) {
         setActiveStep(3);
         setCompleted([0, 1, 2]);
       }
@@ -49,13 +83,11 @@ export default function LoadingScreen() {
     
     requestAnimationFrame(animateProgress);
 
-    // Fade out screen after 1.5 seconds
     const hideTimer = setTimeout(() => {
       setIsVisible(false);
-      // restore body overflow after fade-out transition finishes
       setTimeout(() => {
         document.body.style.overflow = '';
-      }, 300); // match duration of fade-out
+      }, 300); 
     }, 1500);
 
     return () => {
@@ -64,6 +96,8 @@ export default function LoadingScreen() {
     };
   }, []);
 
+  if (!isVisible) return null;
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -71,7 +105,7 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-[9999] bg-[#030014] flex flex-col items-center justify-center p-4"
+          className="fixed inset-0 z-[9999] bg-[#030014] flex flex-col items-center justify-center p-4 loading-screen-overlay"
         >
           {/* Glowing background shapes to match site's style */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -138,6 +172,63 @@ export default function LoadingScreen() {
                   animate={{ strokeDashoffset: [0, -10] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                 />
+
+                {/* Animated Data Pulses along connecting lines */}
+                <motion.circle
+                  r="1.5"
+                  fill="#22d3ee"
+                  animate={{
+                    cx: [50, 30],
+                    cy: [20, 50]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                />
+                <motion.circle
+                  r="1.5"
+                  fill="#22d3ee"
+                  animate={{
+                    cx: [50, 70],
+                    cy: [20, 50]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: 0.4
+                  }}
+                />
+                <motion.circle
+                  r="1.5"
+                  fill="#a855f7"
+                  animate={{
+                    cx: [30, 50],
+                    cy: [50, 80]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: 0.7
+                  }}
+                />
+                <motion.circle
+                  r="1.5"
+                  fill="#a855f7"
+                  animate={{
+                    cx: [70, 50],
+                    cy: [50, 80]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "linear",
+                    delay: 1.1
+                  }}
+                />
                 
                 {/* Nodes */}
                 <motion.circle
@@ -182,8 +273,8 @@ export default function LoadingScreen() {
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
                   <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
                 </div>
-                <span className="text-[10px] font-mono tracking-wider text-slate-500 uppercase">
-                  LLM Core Boot_
+                <span className="text-[10px] font-mono tracking-wider text-slate-500">
+                  surya@portfolio:~$
                 </span>
               </div>
 
@@ -207,7 +298,11 @@ export default function LoadingScreen() {
                       <div className="flex items-center gap-3">
                         <Icon className={`w-4 h-4 ${isActive ? 'text-cyan-400 animate-pulse' : isCompleted ? 'text-purple-400' : 'text-slate-600'}`} />
                         <span className={`${isActive ? 'text-slate-200 font-medium' : isCompleted ? 'text-slate-400' : 'text-slate-600'}`}>
-                          {step.text}
+                          {isActive ? (
+                            <TypewriterText text={step.text} />
+                          ) : (
+                            step.text
+                          )}
                         </span>
                       </div>
                       
@@ -233,6 +328,12 @@ export default function LoadingScreen() {
               </div>
             </div>
 
+            {/* Subtle easter egg footer */}
+            <div className="mt-6 text-center">
+              <span className="text-[10px] text-slate-600 font-mono tracking-widest uppercase">
+                Production AI Engineer Portfolio // v2.0 // Build 2026
+              </span>
+            </div>
           </div>
         </motion.div>
       )}
