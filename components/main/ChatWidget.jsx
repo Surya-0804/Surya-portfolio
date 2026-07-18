@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, User, Bot, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, User, Bot, Loader2, Maximize2, Minimize2 } from 'lucide-react';
 
 import ReactMarkdown from 'react-markdown';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [localInput, setLocalInput] = useState('');
   
   // Custom state for raw streaming
@@ -95,7 +96,11 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-4 w-[350px] sm:w-[400px] h-[500px] max-h-[80vh] flex flex-col rounded-2xl overflow-hidden border border-purple-500/30 bg-[#030014]/80 backdrop-blur-xl shadow-2xl shadow-purple-900/20"
+            className={`mb-4 flex flex-col rounded-2xl overflow-hidden border border-purple-500/30 bg-[#030014]/80 backdrop-blur-xl shadow-2xl shadow-purple-900/20 ${
+              isExpanded 
+                ? 'w-[90vw] md:w-[80vw] h-[85vh] max-h-[90vh]'
+                : 'w-[350px] sm:w-[400px] h-[500px] max-h-[80vh]'
+            }`}
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-purple-500/20 bg-purple-500/10">
@@ -103,16 +108,26 @@ export default function ChatWidget() {
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="font-semibold text-slate-200 text-sm">Surya's AI Assistant</span>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-slate-400 hover:text-slate-200 transition-colors"
-              >
-                <X size={18} />
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="text-slate-400 hover:text-slate-200 transition-colors"
+                  title={isExpanded ? "Collapse" : "Expand"}
+                >
+                  {isExpanded ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-slate-400 hover:text-slate-200 transition-colors"
+                  title="Close"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-purple-500/50 scrollbar-track-transparent">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
               {messages.length === 0 && (
                 <div className="flex flex-col items-center justify-center h-full text-slate-400 space-y-3">
                   <Bot size={40} className="text-purple-400/50" />
@@ -131,14 +146,19 @@ export default function ChatWidget() {
                     {m.role === 'user' ? <User size={16} className="text-white" /> : <Bot size={16} className="text-purple-400" />}
                   </div>
                   <div
-                    className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
+                    className={`max-w-[85%] overflow-hidden break-words rounded-2xl px-4 py-2 text-sm ${
                       m.role === 'user'
                         ? 'bg-purple-600 text-white rounded-tr-none'
-                        : 'bg-[#151030] border border-purple-500/20 text-slate-200 rounded-tl-none prose prose-invert prose-p:leading-relaxed prose-pre:bg-[#0c0c1e] prose-pre:border prose-pre:border-white/10'
+                        : 'bg-[#151030] border border-purple-500/20 text-slate-200 rounded-tl-none prose prose-invert prose-p:leading-relaxed prose-pre:bg-[#0c0c1e] prose-pre:border prose-pre:border-white/10 prose-a:break-all'
                     }`}
                   >
                     {m.role === 'user' ? (
                       <div className="whitespace-pre-wrap">{m.content}</div>
+                    ) : m.content === '' && isLoading ? (
+                      <div className="flex items-center gap-2 text-slate-300 py-1">
+                        <Loader2 size={14} className="animate-spin text-purple-400" />
+                        <span>Thinking...</span>
+                      </div>
                     ) : (
                       <ReactMarkdown
                         components={{
@@ -154,18 +174,7 @@ export default function ChatWidget() {
                   </div>
                 </div>
               ))}
-              
-              {isLoading && messages.length > 0 && messages[messages.length - 1].role === 'user' && (
-                <div className="flex gap-3 flex-row">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-[#151030] border border-purple-500/30">
-                    <Bot size={16} className="text-purple-400" />
-                  </div>
-                  <div className="bg-[#151030] border border-purple-500/20 rounded-2xl rounded-tl-none px-4 py-3 flex items-center gap-2 text-sm text-slate-300">
-                    <Loader2 size={14} className="animate-spin text-purple-400" />
-                    <span>Searching knowledge base...</span>
-                  </div>
-                </div>
-              )}
+
               
               {error && (
                 <div className="flex gap-3 flex-row mt-2">
