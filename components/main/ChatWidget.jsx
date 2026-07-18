@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, User, Bot, Loader2 } from 'lucide-react';
 
+import ReactMarkdown from 'react-markdown';
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [localInput, setLocalInput] = useState('');
@@ -129,14 +131,26 @@ export default function ChatWidget() {
                     {m.role === 'user' ? <User size={16} className="text-white" /> : <Bot size={16} className="text-purple-400" />}
                   </div>
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
+                    className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm ${
                       m.role === 'user'
                         ? 'bg-purple-600 text-white rounded-tr-none'
-                        : 'bg-[#151030] border border-purple-500/20 text-slate-200 rounded-tl-none'
+                        : 'bg-[#151030] border border-purple-500/20 text-slate-200 rounded-tl-none prose prose-invert prose-p:leading-relaxed prose-pre:bg-[#0c0c1e] prose-pre:border prose-pre:border-white/10'
                     }`}
                   >
-                    {/* Basic markdown rendering workaround for now, using whitespace-pre-wrap */}
-                    <div className="whitespace-pre-wrap">{m.content}</div>
+                    {m.role === 'user' ? (
+                      <div className="whitespace-pre-wrap">{m.content}</div>
+                    ) : (
+                      <ReactMarkdown
+                        components={{
+                          a: ({node, ...props}) => <a {...props} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline" />,
+                          p: ({node, ...props}) => <p {...props} className="mb-2 last:mb-0" />,
+                          ul: ({node, ...props}) => <ul {...props} className="list-disc pl-4 mb-2" />,
+                          li: ({node, ...props}) => <li {...props} className="mb-1" />
+                        }}
+                      >
+                        {m.content}
+                      </ReactMarkdown>
+                    )}
                   </div>
                 </div>
               ))}
@@ -146,10 +160,9 @@ export default function ChatWidget() {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-[#151030] border border-purple-500/30">
                     <Bot size={16} className="text-purple-400" />
                   </div>
-                  <div className="bg-[#151030] border border-purple-500/20 rounded-2xl rounded-tl-none px-4 py-3 flex items-center gap-1">
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce"></div>
+                  <div className="bg-[#151030] border border-purple-500/20 rounded-2xl rounded-tl-none px-4 py-3 flex items-center gap-2 text-sm text-slate-300">
+                    <Loader2 size={14} className="animate-spin text-purple-400" />
+                    <span>Searching knowledge base...</span>
                   </div>
                 </div>
               )}
