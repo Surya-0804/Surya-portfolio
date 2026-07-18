@@ -4,6 +4,7 @@ import StarsCanvas from '@/components/main/StarBackground';
 import NavBar from '@/components/main/NavBar';
 import Footer from '@/components/main/Footer';
 import LoadingScreen from '@/components/main/LoadingScreen';
+import ChatWidget from '@/components/main/ChatWidget';
 import { Toaster } from 'sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
         <NavBar />
         {children}
         <Footer />
+        <ChatWidget />
         <SpeedInsights />
         <Analytics />
       </body>
