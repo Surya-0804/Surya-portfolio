@@ -3,6 +3,7 @@ import './globals.css';
 import StarsCanvas from '@/components/main/StarBackground';
 import NavBar from '@/components/main/NavBar';
 import Footer from '@/components/main/Footer';
+import LoadingScreen from '@/components/main/LoadingScreen';
 import { Toaster } from 'sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -74,9 +75,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+                if (sessionStorage.getItem('hasBooted') && !isDev) {
+                  document.documentElement.classList.add('has-booted');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
+        <LoadingScreen />
         <Toaster richColors />
 
         <StarsCanvas />

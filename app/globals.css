@@ -337,3 +337,8 @@ html {
   margin-top: 0;
 }
 
+/* Prevent loading screen hydration flash */
+.has-booted .loading-screen-overlay {
+  display: none !important;
+}
+

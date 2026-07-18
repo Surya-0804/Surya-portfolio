@@ -343,11 +343,11 @@ const Articles = () => {
 
   return (
     <div
-      className="flex flex-col items-center justify-center py-24 z-[20] relative w-full"
+      className="flex flex-col items-center justify-center py-16 z-[20] relative w-full"
       id="articles"
     >
       {/* Title */}
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 pt-16 pb-4">
+      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-4">
         Technical Writing
       </h1>
       <p className="text-slate-400 text-sm md:text-base text-center max-w-md mb-8">

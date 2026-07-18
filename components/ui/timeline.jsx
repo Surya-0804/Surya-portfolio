@@ -27,11 +27,13 @@ export const Timeline = ({ data }) => {
       className="w-full bg-transparent font-sans px-4 md:px-10"
       ref={containerRef}
     >
-      <div ref={ref} className="relative max-w-5xl mx-auto pb-20">
+      <div ref={ref} className="relative max-w-5xl mx-auto pb-0">
         {data.map((item, index) => (
           <div
             key={index}
-            className="relative pl-10 md:pl-20 pb-16 last:pb-8 pt-2"
+            className={`relative pl-10 md:pl-20 pt-2 ${
+              index === data.length - 1 ? 'pb-4' : 'pb-16'
+            }`}
           >
             {/* Timeline Circle Node */}
             <div className="absolute left-[12px] md:left-[32px] top-6 z-40">
@@ -47,7 +49,7 @@ export const Timeline = ({ data }) => {
         ))}
         <div
           style={{
-            height: Math.max(0, height - 110) + 'px',
+            height: Math.max(0, height - 150) + 'px',
           }}
           className="absolute md:left-[40px] left-[20px] top-6 overflow-hidden w-[2px] bg-white/5"
         >

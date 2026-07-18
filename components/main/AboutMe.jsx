@@ -128,7 +128,7 @@ const AboutMe = () => {
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center py-20 px-4 md:px-12 lg:px-20"
+      className="relative flex flex-col items-center justify-center py-16 px-4 md:px-12 lg:px-20"
       id="about-me"
       ref={ref}
     >
