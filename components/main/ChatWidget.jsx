@@ -106,7 +106,7 @@ export default function ChatWidget() {
             <div className="flex items-center justify-between px-4 py-3 border-b border-purple-500/20 bg-purple-500/10">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="font-semibold text-slate-200 text-sm">Surya's AI Assistant</span>
+                <span className="font-semibold text-slate-200 text-sm">Surya&apos;s AI Assistant</span>
               </div>
               <div className="flex items-center gap-3">
                 <button
@@ -132,7 +132,7 @@ export default function ChatWidget() {
                 <div className="flex flex-col items-center justify-center h-full text-slate-400 space-y-3">
                   <Bot size={40} className="text-purple-400/50" />
                   <p className="text-sm text-center px-4">
-                    Hi! I'm Surya's AI assistant. Ask me anything about his experience, projects, or how to contact him.
+                    Hi! I&apos;m Surya&apos;s AI assistant. Ask me anything about his experience, projects, or how to contact him.
                   </p>
                 </div>
               )}
