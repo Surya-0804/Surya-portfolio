@@ -4,12 +4,18 @@ export const experience = `
 # Professional Experience
 
 ${experienceData.map(job => `
-## ${job.company} (${job.role})
+## ${job.company} ${job.role ? `(${job.role})` : ''}
 **Timeline:** ${job.date}
 **Location:** ${job.location}
-${job.clusters.map(cluster => `
+${job.clusters ? job.clusters.map(cluster => `
 **${cluster.title}**
-${cluster.bullets.map(bullet => `- ${bullet}`).join('\n')}`).join('\n')}
+${cluster.bullets.map(bullet => `- ${bullet}`).join('\n')}`).join('\n') : ''}
+${job.roles ? job.roles.map(r => `
+### ${r.title} (${r.type} | ${r.date})
+${r.clusters.map(c => `
+**${c.title}**
+${c.bullets.map(b => `- ${b}`).join('\n')}`).join('\n')}
+`).join('\n') : ''}
 `).join('\n')}
 
 ## Peer Feedback & Manager Reviews
